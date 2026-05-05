@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply font-body text-jungle-900 antialiased;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(250, 204, 21, 0.25), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.25), transparent 50%),
+      linear-gradient(180deg, #f0fdf4 0%, #ecfeff 100%);
+    min-height: 100%;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .ws-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-lg font-display font-semibold
+           shadow-lg transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .ws-btn-primary {
+    @apply ws-btn bg-jungle-500 text-white hover:bg-jungle-600;
+  }
+  .ws-btn-sun {
+    @apply ws-btn bg-sunshine-400 text-jungle-900 hover:bg-sunshine-500;
+  }
+  .ws-btn-sky {
+    @apply ws-btn bg-sky2-500 text-white hover:bg-sky2-400;
+  }
+  .ws-btn-ghost {
+    @apply ws-btn bg-white/80 text-jungle-900 hover:bg-white;
+  }
+  .ws-card {
+    @apply rounded-3xl bg-white/85 backdrop-blur shadow-xl ring-1 ring-jungle-100;
+  }
+  .ws-chip {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-semibold;
+  }
+}
+
+/* Projector "screen" texture: subtle scanlines + glow */
+.projector-screen {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.18), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(160deg, #fffbeb 0%, #fef3c7 100%);
+  box-shadow:
+    inset 0 0 60px rgba(0, 0, 0, 0.08),
+    0 0 80px rgba(250, 204, 21, 0.3);
+}
